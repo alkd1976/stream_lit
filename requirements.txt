@@ -1,6 +1,4 @@
-python -m pip install pymysql
-python -m pip install pandas
-python -m pip install numpy
-python -m pip install plotly
-python -m pip install datapane
-python -m pip install datetime
+pymysql
+plotly
+datapane
+
