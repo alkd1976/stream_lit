@@ -24,7 +24,7 @@ from PIL import Image
 #img = Image.open("C:/Users/alokk/Downloads/pyzipfiles/Python27/IIFL//qcalpha_logo.jpg")
 #st.image(img,width=1200,caption="QCALPHA")
 db1 = navfinstratdb.getdb()
-dt = date(2021,5,31)
+dt = datetime.datetime.today().date()
 df = pd.read_sql("SELECT * from iifl.altf6 where tradedate ='"+str(dt)+"'", db1)
 df['expiry'] = pd.to_datetime(df['expiry']).dt.date
 client_list = list(np.unique(df['ClientID']))
