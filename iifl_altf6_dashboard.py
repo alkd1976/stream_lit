@@ -34,7 +34,10 @@ symbol_list = list(np.unique(df['symbol']))
 expiry_list = list(pd.to_datetime(np.unique(df[df['series']!='EQ']['expiry'])).date)
 
 strike_list = list(np.unique(df['strike']))
-strike_list.remove(0.0)
+try:
+    strike_list.remove(0.0)
+except:
+    pass
 option_type_list = list(np.unique(df['option_typ']))
 option_type_list.remove('EQ')
 
