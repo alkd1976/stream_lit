@@ -38,9 +38,12 @@ try:
     strike_list.remove(0.0)
 except:
     pass
-option_type_list = list(np.unique(df['option_typ']))
-option_type_list.remove('EQ')
 
+option_type_list = list(np.unique(df['option_typ']))
+try:
+    option_type_list.remove('EQ')
+except:
+    pass
 df = df.drop(columns=['tradedate', 'strategy_id', 'stream', 'GeneratedBy'])
 st.markdown("<h1 style='text-align: center; color: white;'> IIFL AltF+6</h1>", unsafe_allow_html=True)
 #st.title("QCALPHA IIFL AltF+6")
